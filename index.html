@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouVidPlay - Coming Soon</title>
+    <meta name="author" content="GAMERYTDeveloper">
+<meta name="publisher" content="GAMERYTDeveloper">
+<meta name="copyright" content="© 2025 GAMERYTDeveloper">
+<meta name="owner" content="GAMERYTDeveloper">
+<meta name="trademark" content="YouVidPlay™ and logo are registered trademarks of GAMERYTDeveloper">
+<meta name="application_name" content="YouVidPlay">
+<meta name="version" content="1.0.0">
+<meta name="release_date" content="2026-01-01">
+<meta name="description" content="YouVidPlay is a planned video platform app set to launch in 2026. It aims to provide a seamless video playback experience with features like playlists, offline viewing, and AI-powered assistance.">
+<meta name="keywords" content="YouVidPlay, video platform, video app, video playback, playlists, offline viewing, AI assistance, video sharing, content creation, video streaming">
+<meta name="robots" content="index, follow">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "YouVidPlay",
+  "url": "https://video.gameryt.com/",
+  "image": "https://video.gameryt.com/image.png",
+  "author": {
+    "@type": "Organization",
+    "name": "GAMERYTDeveloper",
+    "url": "https://gameryt.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "GAMERYTDeveloper"
+  },
+  "operatingSystem": "Web",
+  "applicationCategory": "VideoStreamingApplication",
+  "description": "YouVidPlay™ launches in 2026. A new video platform with ad toggle, customizable themes, and AI-powered features.",
+  "datePublished": "2026-01-01",
+  "dateCreated": "2025-09-16",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "YouVidPlay",
+    "logo": "https://video.gameryt.com/image.png",
+    "legalName": "GAMERYTDeveloper",
+    "slogan": "Customize your video experience",
+    "identifier": {
+      "@type": "PropertyValue",
+      "propertyID": "Trademark",
+      "value": "Registered Trademark of GAMERYTDeveloper"
+    }
+  }
+}
+</script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e9e9e9;
+            color: #131313;
+        }
+        body.dark {
+            background-color: #0a0929;
+            color: #e9e9e9;
+        }
+        body.dark .modal {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        body.dark .modal-content {
+            background: #1d0633;
+            color: #e9e9e9;
+        }
+        body.dark .sidebar hr {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark .liquid {
+            background: rgba(20, 20, 30, 0.171);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(3px) saturate(180%);
+            -webkit-backdrop-filter: blur(3px) saturate(180%);
+            border-radius: 30px;
+        }
+        .liquid {
+            background: rgba(255, 255, 255, 0.171);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(3px) saturate(180%);
+            -webkit-backdrop-filter: blur(3px) saturate(180%);
+            border-radius: 30px;
+        }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: 60px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin: 10px;
+        }
+        .menu-btn {
+            cursor: pointer;
+            font-size: 28px;
+            color: inherit;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 600;
+            color: inherit;
+        }
+        .top-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .top-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            height: calc(100vh - 80px);
+            position: fixed;
+            top: 95px;
+            left: 10px;
+            right: auto;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        body.sidebar-right .sidebar {
+            left: auto !important;
+            right: 10px !important;
+        }
+        .sidebar hr {
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 10px 0;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .item:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .menu-text {
+            font-size: 18px;
+            color: inherit;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .tab-btn {
+            background: rgba(255,255,255,0.08);
+            color: inherit;
+            border: none;
+            border-radius: 18px 18px 0 0;
+            padding: 10px 24px;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: #ffd700;
+            color: #222;
+        }
+
+        .tab-content {
+            background: rgba(255,255,255,0.13);
+            border-radius: 0 0 18px 18px;
+            padding: 18px 20px;
+            color: inherit;
+            min-height: 120px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+
+        body.dark .tab-btn {
+            background: rgba(30,30,50,0.18);
+            color: #e9e9e9;
+        }
+
+        body.dark .tab-btn.active,
+        body.dark .tab-btn:hover {
+            background: #32013b;
+            color: #ffffff;
+        }
+        .content {
+            margin-left: 270px;
+            margin-right: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+        }
+        body.sidebar-right .content {
+            margin-left: 0 !important;
+            margin-right: 270px !important;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .table-wrapper {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        th {
+            background-color: rgba(0,0,0,0.07);
+            font-weight: 600;
+        }
+        body.dark th {
+            background-color: rgba(255,255,255,0.07);
+        }
+        tr:hover {
+            background-color: rgba(0,0,0,0.04);
+        }
+        body.dark tr:hover {
+            background-color: rgba(255,255,255,0.04);
+        }
+
+        .btn {
+            background-color: #3d06a5;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        @media(max-width: 1190px) {
+            .sidebar {
+                width: 60px;
+                padding: 10px;
+                height: calc(100vh - 90px);
+                overflow-y: auto;
+            }
+            .sidebar hr {
+                display: none;
+            }
+            .menu-text {
+                display: none;
+            }
+            .content {
+                margin-left: 80px !important;
+                margin-right: 80px !important;
+            }
+            body.sidebar-right .content {
+                margin-left: 0 !important;
+                margin-right: 80px !important;
+            }
+            body.sidebar-right .sidebar {
+                left: auto !important;
+                right: 10px !important;
+            }
+            /* Fix: When sidebar-right is collapsed, shift content left */
+            body.sidebar-right .sidebar[style*="width: 60px"] ~ .content {
+                margin-right: 80px !important;
+                margin-left: 0 !important;
+            }
+            .content h1 {
+                font-size: 28px;
+            }
+            .content p, .content ul {
+                font-size: 16px;
+            }
+            .content table th, .content table td {
+                padding: 10px 6px;
+            }
+        }
+        @media (max-width: 768px) {
+            /* for content */
+            .content {
+                margin-left: 20px !important;
+                margin-right: 20px !important;
+                padding: 10px;
+            }
+            .content h1 {
+                font-size: 24px;
+            }
+            .content p, .content ul {
+                font-size: 14px;
+            }
+            .content table th, .content table td {
+                padding: 8px 4px;
+            }
+            .sidebar {
+                display: none;
+                width: 100%;
+            }
+            .sidebar .menu-text {
+                display: block;
+            }
+            .content table {
+                font-size: 15px;
+                overflow-x: auto;
+                display: block;
+            }
+            .content table th, .content table td {
+                white-space: nowrap;
+                padding: 6px 4px;
+            }
+        }
+        @media (max-width: 600px) {
+            .logo-text {
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+            }
+            .topbar {
+                margin: 4px 0 0 0;
+                    padding: 10px 10px;
+            }
+        }
+        @media (max-width: 400px) {
+            .top-right .material-symbols-outlined {
+                font-size: 24px;
+            }
+            .content ul {
+                list-style: none;
+                padding-left: 0;
+            }
+            .content {
+                margin-left: 0 !important;
+                    margin-right: 0 !important;
+                padding: 10px 8px !important; 
+            }
+        }
+        @media (max-width: 177px) {
+            .logo {
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+                padding: 10px 5px;
+            }
+            .topbar {
+                padding: 10px 5px;
+            }
+            .content h1 {
+                font-size: 20px;
+            }
+            .content p, .content ul {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 133px) {
+            .content h1 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body class="dark">
+   <header class="topbar liquid">
+    <div class="top-left">
+    <div class="menu-btn">
+        <span class="material-symbols-outlined">menu</span>
+    </div>
+    <div class="logo">
+        <img src="image.png" alt="YouVidPlay Logo" width="35">
+        <div class="logo-text">YouVidPlay</div>
+    </div>
+    </div>
+    <div class="top-right">
+        <div class="notifications" style="cursor: pointer;" id="notifications-icon">
+            <span class="material-symbols-outlined">notifications</span>
+        </div>
+        <div class="settings-icon" style="cursor: pointer;" id="settingsBtn">
+            <span class="material-symbols-outlined">settings</span>
+        </div>
+    </div>
+   </header> 
+   <div class="sidebar liquid">
+    <div class="item">
+        <span class="material-symbols-outlined">home</span>
+        <span class="menu-text">Home</span>
+    </div>
+    <hr>
+    <div class="item">
+        <span class="material-symbols-outlined">help</span>
+        <div class="menu-text">Help</div>
+    </div>
+    <div class="item" onclick="window.location.href='https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=minecraftgamer97529@gmail.com'">
+        <span class="material-symbols-outlined">mail</span>
+        <div class="menu-text">Contact</div>
+    </div>
+   </div>
+<div class="content">
+ <h1>YouVidPlay is Coming Soon.</h1>
+ <p>YouVidPlay is a planned app so it is not available yet. It will release at <b>2026</b>.</p>
+ <p>Stay tuned for updates!</p>
+ <p>Features gonna have:</p>
+ <ul>
+      <li><b>Video Playback:</b> Watch videos seamlessly.</li>
+      <li><b>Search Functionality:</b> Find your favorite videos easily.</li>
+      <li><b>Playlists:</b> Create and manage your own playlists.</li>
+      <li><b>Customize your appearance:</b> Choose themes and UI.</li>
+      <li><b>Offline Viewing:</b> Download videos to watch offline.</li>
+      <li><b>Social Sharing:</b> Share videos with friends.</li>
+      <li><b>User Channels:</b> Create and manage your channel.</li>
+      <li><b>Notifications:</b> Get updates on new videos and features.</li>
+      <li><b>Monetization:</b> Earn money through memberships and subscriptions.</li>
+      <li><b>Ad-Free:</b> Enjoy an ad-free experience without having a premium subscription.</li>
+      <li><b>AI-Powered:</b> Ask <b>YouGAMERYTAssist</b> to get answers like summarize videos, Help making a video, and more.</li>
+      <li><b>Cross-Platform Sync:</b> Sync your preferences and watch history across devices.</li>
+ </ul>
+ <p>At 2026. Do more with <b>YouVidPlay</b>.</p>
+ <p>Lets compare <b>YouVidPlay</b> vs YouTube and other platforms:</p>
+ <div class="table-wrapper liquid">
+      <table>
+            <thead>
+                 <tr>
+                      <th>Feature</th>
+                      <th>YouVidPlay</th>
+                      <th>YouTube</th>
+                      <th>Vimeo</th>
+                      <th>Dailymotion</th>
+                 </tr>
+            </thead>
+            <tbody>
+                 <tr>
+                      <td>Video Playback</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                 </tr>
+                 <tr>
+                      <td>Search Functionality</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                 </tr>
+                 <tr>
+                      <td>Playlists</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                 </tr>
+                 <tr>
+                      <td>Customize Appearance</td>
+                      <td>Themes & UI</td>
+                      <td>No</td>
+                      <td>No</td>
+                      <td>No</td>
+                 </tr>
+                 <tr>
+                      <td>Offline Viewing</td>
+                      <td>Yes (Free)</td>
+                      <td>Yes (Premium)</td>
+                      <td>No</td>
+                      <td>No</td>
+                 </tr>
+                 <tr>
+                      <td>Social Sharing</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Limited</td>
+                      <td>Limited</td>
+                 </tr>
+                 <tr>
+                      <td>User Channels</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Limited</td>
+                      <td>Limited</td>
+                 </tr>
+                 <tr>
+                      <td>Notifications</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Limited</td>
+                      <td>Limited</td>
+                 </tr>
+                 <tr>
+                      <td>Monetization</td>
+                      <td>Memberships & Subscriptions</td>
+                      <td>Ads, Memberships, Premium</td>
+                      <td>Paid Plans</td>
+                      <td>Ads</td>
+                 </tr>
+                 <tr>
+                      <td>Ad-Free Experience</td>
+                      <td>Yes (Free)</td>
+                      <td>Premium Only</td>
+                      <td>Paid Plans</td>
+                      <td>No</td>
+                 </tr>
+                 <tr>
+                      <td>AI Features</td>
+                      <td>Yes (YouGAMERYTAssist)</td>
+                      <td>No</td>
+                      <td>No</td>
+                      <td>No</td>
+                 </tr>
+                 <tr>
+                      <td>Cross-Platform Sync</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                      <td>Limited</td>
+                      <td>Limited</td>
+                 </tr>
+                 <tr>
+                      <td>Ads</td>
+                      <td>Optional (Ad toggle, default off)</td>
+                      <td>Yes (free)</td>
+                      <td>Yes</td>
+                      <td>Yes</td>
+                 </tr>
+                 <tr>
+                      <td>Fair Rules</td>
+                      <td>Moderate</td>
+                      <td>Strict</td>
+                      <td>Moderate</td>
+                      <td>Strict</td>
+                 </tr>
+            </tbody>
+      </table>
+ </div>
+ <!-- Help Modal -->
+ <div id="helpModal" class="modal" style="display:none;">
+      <div class="modal-content">
+            <button class="close-btn" id="closeHelpModal">&times;</button>
+            <h2>Help</h2>
+            <p>Welcome to YouVidPlay! Here are some tips:</p>
+            <ul>
+                 <li>Use the sidebar to navigate Home, Help, and Contact.</li>
+                 <li>Customize appearance in Settings (top right gear icon).</li>
+                 <li>Check Announcements (top right bell icon) for updates.</li>
+                 <li>Contact us for support or feedback.</li>
+            </ul>
+            <p>More help will be available when YouVidPlay launches.</p>
+      </div>
+ </div>
+ <script>
+      // Help modal logic
+      const helpItem = document.querySelector('.sidebar .item:nth-child(3)');
+      const helpModal = document.getElementById('helpModal');
+      const closeHelpModal = document.getElementById('closeHelpModal');
+      helpItem.addEventListener('click', function() {
+            helpModal.style.display = 'flex';
+      });
+      closeHelpModal.addEventListener('click', function() {
+            helpModal.style.display = 'none';
+      });
+      window.addEventListener('click', function(e) {
+            if (e.target === helpModal) helpModal.style.display = 'none';
+      });
+ </script>
+</div>
+   <div class="content" id="settingsPage">
+    <h1>Settings</h1>
+    <div class="tabs liquid">
+        <div class="tab-btn">Appearance</div>
+    </div>
+    <hr>
+    <div class="tab-content liquid">
+        <h2>Appearance Settings</h2>
+        <p>Customize the look and feel of YouVidPlay.</p>
+        <div style="margin-top: 18px;">
+            <label for="themeSelect" style="font-weight: 600; font-size: 16px; margin-right: 10px;">Theme:</label>
+            <select id="themeSelect" class="liquid" style="
+            color: #b3b3b3;
+            background: rgba(30,30,50,0.18);
+            border : none;
+            border-radius: 12px;
+            padding: 8px 18px;
+            font-size: 16px;
+            margin-top: 6px;
+            font-family: 'Poppins', Arial, sans-serif;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            outline: none;
+            transition: background 0.2s;
+            appearance: none;
+            cursor: pointer;
+            ">
+            <option value="light" style="color: #ffffff; background: #0a0038;">Light</option>
+            <option value="dark" style="color: #ffffff; background: #0a0038;">Dark</option>
+            <option value="system" selected style="color: #ffffff; background: #0a0038;">System Default</option>
+            <option value="custom" style="color: #ffffff; background: #0a0038;">Custom</option>
+            </select>
+        </div>
+        <div id="customColorDiv" style="display: none;">
+            <div class="tabs liquid" id="customColorTabs" style="margin-top: 18px;">
+            <button class="tab-btn active" data-tab="normal">Normal</button>
+            <button class="tab-btn" data-tab="gradient">Gradient (Beta)</button>
+            </div>
+            <div id="customColorTabContent">
+            <div id="customColorNormal" style="display: block;">
+                <label for="customColorInput" style="font-weight: 600; font-size: 16px; margin-right: 10px;">Custom Color:</label>
+                <input type="color" id="customColorInput" value="#0a0038" style="
+                width: 50px;
+                height: 34px;
+                border: none;
+                border-radius: 8px;
+                padding: 0;
+                cursor: pointer;
+                ">
+                <span id="customColorValue" style="font-weight: 600; font-size: 16px; margin-left: 10px;">#0a0038</span>
+                <div id="customColorOptions" style="margin-top: 18px;">
+                <label style="font-weight: 600; font-size: 16px;">Custom Colors:</label>
+                <div style="margin-top: 8px;">
+                    <label for="customThemeColor" style="margin-right: 10px;">Theme:</label>
+                    <input type="color" id="customThemeColor" value="#0a0038" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span id="customThemeValue" style="margin-left: 8px;">#0a0038</span>
+                </div>
+                <div style="margin-top: 8px;">
+                    <label for="customBtnColor" style="margin-right: 10px;">Buttons:</label>
+                    <input type="color" id="customBtnColor" value="#b39ddb" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span id="customBtnValue" style="margin-left: 8px;">#b39ddb</span>
+                </div>
+                <div style="margin-top: 8px;">
+                    <label for="customTextColor" style="margin-right: 10px;">Text:</label>
+                    <input type="color" id="customTextColor" value="#ffffff" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span id="customTextValue" style="margin-left: 8px;">#ffffff</span>
+                </div>
+                <div style="margin-top: 8px;">
+                    <label for="customLiquidColor" style="margin-right: 10px;">Liquid Glass:</label>
+                    <input type="color" id="customLiquidColor" value="#ffffff" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span id="customLiquidValue" style="margin-left: 8px;">#ffffff</span>
+                </div>
+                </div>
+            </div>
+            <div id="customColorGradient" style="display: none;">
+                <label style="font-weight: 600; font-size: 16px; margin-right: 10px;">Gradient Colors:</label>
+                <div id="gradientColorsList">
+                <div class="gradient-color-row" data-type="theme">
+                    <label style="margin-right: 10px;">Theme:</label>
+                    <input type="color" class="gradientColorInput" value="#0a0038" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span class="gradientColorValue" style="margin-left: 8px;">#0a0038</span>
+                </div>
+                <div class="gradient-color-row" data-type="button">
+                    <label style="margin-right: 10px;">Button:</label>
+                    <input type="color" class="gradientColorInput" value="#b39ddb" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span class="gradientColorValue" style="margin-left: 8px;">#b39ddb</span>
+                </div>
+                <div class="gradient-color-row" data-type="text">
+                    <label style="margin-right: 10px;">Text:</label>
+                    <input type="color" class="gradientColorInput" value="#ffffff" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span class="gradientColorValue" style="margin-left: 8px;">#ffffff</span>
+                </div>
+                <div class="gradient-color-row" data-type="liquid">
+                    <label style="margin-right: 10px;">Liquid Glass:</label>
+                    <input type="color" class="gradientColorInput" value="#ffffff" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span class="gradientColorValue" style="margin-left: 8px;">#ffffff</span>
+                </div>
+                </div>
+                <div style="position: relative; display: inline-block;">
+                <button id="addGradientColorBtn" class="btn" style="margin-top: 12px;">Add Color</button>
+                <select id="addGradientColorDropdown" style="display:none; position: absolute; left: 0; top: 40px; z-index: 10; background: #222; color: #fff; border-radius: 8px; border: none; font-size: 16px; padding: 6px 12px;">
+                    <option value="">Select type...</option>
+                    <option value="theme">Theme</option>
+                    <option value="button">Button</option>
+                    <option value="text">Text</option>
+                    <option value="liquid">Liquid Glass</option>
+                </select>
+                </div>
+            </div>
+            </div>
+            <div style="margin-top: 18px;"></div>
+            <script>
+                // Hash-based page navigation
+                function showPageFromHash() {
+                    const hash = window.location.hash;
+                    const homePage = document.querySelector('.content:not(#settingsPage)');
+                    const settingsPage = document.getElementById('settingsPage');
+                    if (hash === '#/settings') {
+                        if (settingsPage) settingsPage.style.display = 'block';
+                        if (homePage) homePage.style.display = 'none';
+                    } else {
+                        if (settingsPage) settingsPage.style.display = 'none';
+                        if (homePage) homePage.style.display = 'block';
+                    }
+                }
+                window.addEventListener('hashchange', showPageFromHash);
+                window.addEventListener('DOMContentLoaded', showPageFromHash);
+
+                // Settings icon click navigates to #/settings
+                document.getElementById('settingsBtn').addEventListener('click', function() {
+                    if (window.location.hash !== '#/settings') {
+                        window.location.hash = '#/settings';
+                    } else {
+                        window.location.hash = '#';
+                    }
+                });
+            </script>
+                <label for="sidebarPositionSelect" style="font-weight: 600; font-size: 16px; margin-right: 10px;">Sidebar Position:</label>
+                <select id="sidebarPositionSelect" class="liquid" style="
+                    color: #b3b3b3;
+                    background: rgba(30,30,50,0.18);
+                    border: none;
+                    border-radius: 12px;
+                    padding: 8px 18px;
+                    font-size: 16px;
+                    margin-top: 6px;
+                    font-family: 'Poppins', Arial, sans-serif;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                    outline: none;
+                    transition: background 0.2s;
+                ">
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+            <script>
+                // Sidebar position logic
+                const sidebarEl = document.querySelector('.sidebar');
+                const sidebarPositionSelect = document.getElementById('sidebarPositionSelect');
+                function applySidebarPosition(pos) {
+                    if (pos === 'right') {
+                        document.body.classList.add('sidebar-right');
+                        document.body.classList.remove('sidebar-left');
+                        sidebarEl.style.left = '';
+                        sidebarEl.style.right = '10px';
+                        document.querySelectorAll('.content').forEach(content => {
+                            content.style.marginLeft = '';
+                            content.style.marginRight = window.innerWidth > 1190
+                                ? (localStorage.getItem('sidebarCollapsed') === 'true' ? '80px' : '270px')
+                                : '';
+                        });
+                    } else {
+                        document.body.classList.remove('sidebar-right');
+                        document.body.classList.add('sidebar-left');
+                        sidebarEl.style.right = '';
+                        sidebarEl.style.left = '10px';
+                        document.querySelectorAll('.content').forEach(content => {
+                            content.style.marginRight = '';
+                            content.style.marginLeft = window.innerWidth > 1190
+                                ? (localStorage.getItem('sidebarCollapsed') === 'true' ? '80px' : '270px')
+                                : '';
+                        });
+                    }
+                }
+                sidebarPositionSelect.addEventListener('change', function() {
+                    localStorage.setItem('sidebarPosition', this.value);
+                    applySidebarPosition(this.value);
+                });
+                window.addEventListener('DOMContentLoaded', () => {
+                    const savedPos = localStorage.getItem('sidebarPosition') || 'left';
+                    sidebarPositionSelect.value = savedPos;
+                    applySidebarPosition(savedPos);
+                });
+            </script>
+        </div>
+        <script>
+            // Custom color logic with localStorage
+            const themeSelect = document.getElementById('themeSelect');
+            const customColorDiv = document.getElementById('customColorDiv');
+            const customColorTabs = document.getElementById('customColorTabs');
+            const customColorTabContent = document.getElementById('customColorTabContent');
+            const customColorNormal = document.getElementById('customColorNormal');
+            const customColorGradient = document.getElementById('customColorGradient');
+            const customColorInput = document.getElementById('customColorInput');
+            const customColorValue = document.getElementById('customColorValue');
+            const customColorOptions = document.getElementById('customColorOptions');
+            const customThemeColor = document.getElementById('customThemeColor');
+            const customBtnColor = document.getElementById('customBtnColor');
+            const customTextColor = document.getElementById('customTextColor');
+            const customLiquidColor = document.getElementById('customLiquidColor');
+            const customThemeValue = document.getElementById('customThemeValue');
+            const customBtnValue = document.getElementById('customBtnValue');
+            const customTextValue = document.getElementById('customTextValue');
+            const customLiquidValue = document.getElementById('customLiquidValue');
+            // Gradient
+            const gradientColorsList = document.getElementById('gradientColorsList');
+            const addGradientColorBtn = document.getElementById('addGradientColorBtn');
+            const addGradientColorDropdown = document.getElementById('addGradientColorDropdown');
+
+            // Helper for gradient colors
+            function getGradientColors() {
+                const rows = gradientColorsList.querySelectorAll('.gradient-color-row');
+                const colors = [];
+                rows.forEach(row => {
+                    const type = row.getAttribute('data-type') || '';
+                    const input = row.querySelector('.gradientColorInput');
+                    colors.push({
+                        type,
+                        color: input.value
+                    });
+                });
+                return colors;
+            }
+
+            function saveCustomColors(theme, btn, text, liquid, gradientColors, mode) {
+                localStorage.setItem('customColors', JSON.stringify({
+                    theme, btn, text, liquid, gradientColors, mode
+                }));
+            }
+            function loadCustomColors() {
+                try {
+                    const saved = JSON.parse(localStorage.getItem('customColors'));
+                    if (saved && saved.gradientColors) {
+                        return saved;
+                    }
+                    // fallback for old structure
+                    return {
+                        theme: saved?.theme || '#0a0038',
+                        btn: saved?.btn || '#b39ddb',
+                        text: saved?.text || '#ffffff',
+                        liquid: saved?.liquid || '#ffffff',
+                        gradientColors: [
+                            { type: 'theme', color: saved?.gradient1 || '#0a0038' },
+                            { type: 'button', color: saved?.gradient2 || '#b39ddb' },
+                            { type: 'text', color: '#ffffff' },
+                            { type: 'liquid', color: '#ffffff' }
+                        ],
+                        mode: saved?.mode || 'normal'
+                    };
+                } catch {
+                    return {
+                        theme: '#0a0038',
+                        btn: '#b39ddb',
+                        text: '#ffffff',
+                        liquid: '#ffffff',
+                        gradientColors: [
+                            { type: 'theme', color: '#0a0038' },
+                            { type: 'button', color: '#b39ddb' },
+                            { type: 'text', color: '#ffffff' },
+                            { type: 'liquid', color: '#ffffff' }
+                        ],
+                        mode: 'normal'
+                    };
+                }
+            }
+            function saveThemeSelect(value) {
+                localStorage.setItem('themeSelect', value);
+            }
+            function loadThemeSelect() {
+                return localStorage.getItem('themeSelect') || 'system';
+            }
+
+            // Helper to get gradient string for a type
+            function getGradientString(type, gradientColors, fallback) {
+                // Filter out empty or invalid colors
+                const filtered = gradientColors.filter(c => c.type === type && c.color && c.color !== '#ffffff');
+                // If there are two or more colors for this type, use gradient
+                if (filtered.length >= 2) {
+                    return `linear-gradient(135deg, ${filtered.map(c => c.color).join(', ')})`;
+                } else if (filtered.length === 1) {
+                    return filtered[0].color;
+                }
+                // If fallback is a valid color, use it, otherwise default to a sensible value
+                return fallback && fallback !== '#ffffff' ? fallback : (type === 'theme' ? '#0a0038' : type === 'button' ? '#b39ddb' : '#ffffff');
+            }
+
+            function applyCustomColor(theme, btn, text, liquid, gradientColors, mode) {
+                // Only allow max two theme gradients at a time for gradient
+                gradientColors = [
+                    ...gradientColors.filter((c, i, arr) => c.type !== 'theme' || arr.filter(x => x.type === 'theme').indexOf(c) < 2),
+                    ...gradientColors.filter((c, i, arr) => c.type !== 'text' || arr.filter(x => x.type === 'text').indexOf(c) < 2)
+                ].filter((v, i, arr) => arr.indexOf(v) === i); // Remove duplicates
+
+                let themeBg;
+                if (mode === 'gradient') {
+                    // Theme background gradient
+                    themeBg = getGradientString('theme', gradientColors, theme);
+                    document.documentElement.style.setProperty('--custom-bg', themeBg);
+                    // Button gradient
+                    const btnGradient = getGradientString('button', gradientColors, btn);
+                    document.documentElement.style.setProperty('--custom-btn', btnGradient);
+                    // Text gradient (applied as color, not background)
+                    const textGradient = getGradientString('text', gradientColors, text);
+                    document.documentElement.style.setProperty('--custom-text', textGradient);
+                    // Liquid gradient (with alpha)
+                    let liquidGradient = getGradientString('liquid', gradientColors, liquid);
+                    if (liquidGradient.startsWith('linear-gradient')) {
+                        // Replace each color with color + '33' for alpha
+                        liquidGradient = liquidGradient.replace(/(#(?:[0-9a-fA-F]{3}){1,2})/g, '$133');
+                    } else {
+                        liquidGradient += '33';
+                    }
+                    document.documentElement.style.setProperty('--custom-liquid', liquidGradient);
+                } else {
+                    themeBg = theme || '#0a0038';
+                    document.documentElement.style.setProperty('--custom-bg', themeBg);
+                    document.documentElement.style.setProperty('--custom-btn', btn || '#b39ddb');
+                    document.documentElement.style.setProperty('--custom-text', text || '#ffffff');
+                    document.documentElement.style.setProperty('--custom-liquid', (liquid || '#ffffff') + '33');
+                }
+
+                // Apply theme background to body, .topbar, .sidebar, and .content
+                if (themeBg.startsWith('linear-gradient')) {
+                    document.body.style.backgroundImage = themeBg;
+                    document.body.style.backgroundColor = '';
+                } else {
+                    document.body.style.backgroundImage = '';
+                    document.body.style.backgroundColor = themeBg;
+                }
+                document.querySelectorAll('.topbar, .sidebar, .content').forEach(el => {
+                    el.style.background = themeBg;
+                });
+                // Also apply to html for full-page gradient
+                document.documentElement.style.background = themeBg;
+
+                // Text gradient logic
+                if (
+                    mode === 'gradient' &&
+                    getGradientString('text', gradientColors, text).startsWith('linear-gradient')
+                ) {
+                    document.body.style.backgroundImage = '';
+                    document.body.style.backgroundClip = '';
+                    document.body.style.webkitBackgroundClip = '';
+                    document.body.style.color = '';
+                    document.body.style.webkitTextFillColor = '';
+                    document.body.style.textFillColor = '';
+                    document.querySelectorAll('.logo-text, .menu-text, .tab-btn, h1, h2, h3, h4, h5, h6, p, li, span, .settings-icon, .notifications').forEach(el => {
+                        el.style.backgroundImage = getGradientString('text', gradientColors, text);
+                        el.style.backgroundClip = 'text';
+                        el.style.webkitBackgroundClip = 'text';
+                        el.style.color = 'transparent';
+                        el.style.webkitTextFillColor = 'transparent';
+                        el.style.textFillColor = 'transparent';
+                    });
+                } else {
+                    document.body.style.backgroundImage = '';
+                    document.body.style.backgroundClip = '';
+                    document.body.style.webkitBackgroundClip = '';
+                    document.body.style.color = `var(--custom-text)`;
+                    document.body.style.webkitTextFillColor = '';
+                    document.body.style.textFillColor = '';
+                    document.querySelectorAll('.logo-text, .menu-text, .tab-btn, h1, h2, h3, h4, h5, h6, p, li, span, .settings-icon, .notifications').forEach(el => {
+                        el.style.backgroundImage = '';
+                        el.style.backgroundClip = '';
+                        el.style.webkitBackgroundClip = '';
+                        el.style.color = `var(--custom-text)`;
+                        el.style.webkitTextFillColor = '';
+                        el.style.textFillColor = '';
+                    });
+                }
+                document.querySelectorAll('.liquid').forEach(el => {
+                    el.style.background = `var(--custom-liquid)`;
+                    el.style.boxShadow = `0 2px 8px ${liquid}44`;
+                });
+                document.querySelectorAll('.tab-btn').forEach(el => {
+                    el.style.background = `var(--custom-btn)`;
+                    el.style.color = `var(--custom-text)`;
+                });
+                document.querySelectorAll('.tab-btn.active').forEach(el => {
+                    el.style.background = `#ffd700`;
+                    el.style.color = '#222';
+                });
+            }
+
+            // Add missing function to fix ReferenceError
+            function updateCustomColorInputs(save = true) {
+                customThemeValue.textContent = customThemeColor.value;
+                customBtnValue.textContent = customBtnColor.value;
+                customTextValue.textContent = customTextColor.value;
+                customLiquidValue.textContent = customLiquidColor.value;
+                customColorInput.value = customThemeColor.value;
+                customColorValue.textContent = customThemeColor.value;
+                // Gradient
+                gradientColorsList.querySelectorAll('.gradient-color-row').forEach(row => {
+                    const input = row.querySelector('.gradientColorInput');
+                    const valueSpan = row.querySelector('.gradientColorValue');
+                    valueSpan.textContent = input.value;
+                });
+                // If two or more theme colors, switch to gradient mode automatically
+                const themeRows = gradientColorsList.querySelectorAll('.gradient-color-row[data-type="theme"]');
+                if (themeRows.length >= 2 && customColorTabs) {
+                    customColorTabs.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    customColorTabs.querySelector('[data-tab="gradient"]').classList.add('active');
+                    customColorNormal.style.display = 'none';
+                    customColorGradient.style.display = 'block';
+                }
+                const mode = customColorTabs && customColorTabs.style.display === 'block' && customColorTabs.querySelector('.tab-btn.active').dataset.tab === 'gradient' ? 'gradient' : 'normal';
+                applyCustomColor(
+                    customThemeColor.value,
+                    customBtnColor.value,
+                    customTextColor.value,
+                    customLiquidColor.value,
+                    getGradientColors(),
+                    mode
+                );
+                if (save) {
+                    saveCustomColors(
+                        customThemeColor.value,
+                        customBtnColor.value,
+                        customTextColor.value,
+                        customLiquidColor.value,
+                        getGradientColors(),
+                        mode
+                    );
+                }
+            }
+
+            if (customColorTabs) {
+                customColorTabs.addEventListener('click', function(e) {
+                    if (e.target.classList.contains('tab-btn')) {
+                        customColorTabs.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                        e.target.classList.add('active');
+                        if (e.target.dataset.tab === 'normal') {
+                            customColorNormal.style.display = 'block';
+                            customColorGradient.style.display = 'none';
+                        } else {
+                            customColorNormal.style.display = 'none';
+                            customColorGradient.style.display = 'block';
+                        }
+                        updateCustomColorInputs();
+                    }
+                });
+            }
+
+            themeSelect.addEventListener('change', function() {
+                saveThemeSelect(this.value);
+                if (this.value === 'custom') {
+                    customColorDiv.style.display = 'block';
+                    customColorTabs.style.display = 'block';
+                    customColorOptions.style.display = 'block';
+                    updateCustomColorInputs();
+                } else {
+                    customColorDiv.style.display = 'none';
+                    customColorTabs.style.display = 'none';
+                    customColorOptions.style.display = 'none';
+                    document.body.style.background = '';
+                    document.body.style.color = '';
+                    document.querySelectorAll('.liquid').forEach(el => {
+                        el.style.background = '';
+                        el.style.boxShadow = '';
+                    });
+                    document.querySelectorAll('.tab-btn').forEach(el => {
+                        el.style.background = '';
+                        el.style.color = '';
+                    });
+                    document.querySelectorAll('.menu-btn, .logo-text, .menu-text, .settings-icon, .notifications').forEach(el => {
+                        el.style.color = '';
+                    });
+                }
+            });
+
+            customThemeColor.addEventListener('input', () => updateCustomColorInputs());
+            customBtnColor.addEventListener('input', () => updateCustomColorInputs());
+            customTextColor.addEventListener('input', () => updateCustomColorInputs());
+            customLiquidColor.addEventListener('input', () => updateCustomColorInputs());
+            customColorInput.addEventListener('input', function() {
+                customColorValue.textContent = this.value;
+                customThemeColor.value = this.value;
+                customThemeValue.textContent = this.value;
+                updateCustomColorInputs();
+            });
+
+            // Gradient color input listeners
+            function attachGradientListeners() {
+                gradientColorsList.querySelectorAll('.gradientColorInput').forEach(input => {
+                    input.addEventListener('input', updateCustomColorInputs);
+                });
+            }
+            attachGradientListeners();
+
+            // Add color button logic (dropdown instead of prompt)
+            addGradientColorBtn.addEventListener('click', function() {
+                addGradientColorDropdown.style.display = addGradientColorDropdown.style.display === 'none' ? 'block' : 'none';
+            });
+            addGradientColorDropdown.addEventListener('change', function() {
+                const type = this.value;
+                if (!type) return;
+                // Only allow max two "theme" type rows at a time
+                if (type === 'theme') {
+                    const themeRows = gradientColorsList.querySelectorAll('[data-type="theme"]');
+                    if (themeRows.length >= 2) {
+                        addGradientColorDropdown.style.display = 'none';
+                        this.value = '';
+                        return;
+                    }
+                }
+                // Only allow max two "text" type rows at a time
+                if (type === 'text') {
+                    const textRows = gradientColorsList.querySelectorAll('[data-type="text"]');
+                    if (textRows.length >= 2) {
+                        addGradientColorDropdown.style.display = 'none';
+                        this.value = '';
+                        return;
+                    }
+                }
+                // Default color
+                const color = '#ffffff';
+                const row = document.createElement('div');
+                row.className = 'gradient-color-row';
+                row.setAttribute('data-type', type);
+                row.innerHTML = `
+                    <label style="margin-right: 10px;">${type.charAt(0).toUpperCase() + type.slice(1)}:</label>
+                    <input type="color" class="gradientColorInput" value="${color}" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                    <span class="gradientColorValue" style="margin-left: 8px;">${color}</span>
+                    <button class="removeGradientColorBtn" style="margin-left: 10px; background: #ffd700; color: #222; border: none; border-radius: 8px; padding: 2px 10px; cursor: pointer; font-size: 13px;">Remove</button>
+                `;
+                gradientColorsList.appendChild(row);
+                attachGradientListeners();
+                row.querySelector('.removeGradientColorBtn').addEventListener('click', function() {
+                    row.remove();
+                    updateCustomColorInputs();
+                });
+                updateCustomColorInputs();
+                addGradientColorDropdown.style.display = 'none';
+                this.value = '';
+            });
+
+            // Remove button for default rows
+            gradientColorsList.querySelectorAll('.gradient-color-row').forEach(row => {
+                const btn = document.createElement('button');
+                btn.className = 'removeGradientColorBtn';
+                btn.textContent = 'Remove';
+                btn.style.marginLeft = '10px';
+                btn.style.background = '#ffd700';
+                btn.style.color = '#222';
+                btn.style.border = 'none';
+                btn.style.borderRadius = '8px';
+                btn.style.padding = '2px 10px';
+                btn.style.cursor = 'pointer';
+                btn.style.fontSize = '13px';
+                btn.addEventListener('click', function() {
+                    row.remove();
+                    updateCustomColorInputs();
+                });
+                row.appendChild(btn);
+            });
+
+            // Load saved theme and colors on page load
+            window.addEventListener('DOMContentLoaded', () => {
+                themeSelect.value = loadThemeSelect();
+                if (themeSelect.value === 'custom') {
+                    customColorDiv.style.display = 'block';
+                    customColorTabs.style.display = 'block';
+                    customColorOptions.style.display = 'block';
+                } else {
+                    customColorDiv.style.display = 'none';
+                    customColorTabs.style.display = 'none';
+                    customColorOptions.style.display = 'none';
+                }
+                const colors = loadCustomColors();
+                customThemeColor.value = colors.theme;
+                customBtnColor.value = colors.btn;
+                customTextColor.value = colors.text;
+                customLiquidColor.value = colors.liquid;
+                customColorInput.value = colors.theme;
+                customColorValue.textContent = colors.theme;
+                customThemeValue.textContent = colors.theme;
+                customBtnValue.textContent = colors.btn;
+                customTextValue.textContent = colors.text;
+                customLiquidValue.textContent = colors.liquid;
+                // Gradient
+                gradientColorsList.innerHTML = '';
+                (colors.gradientColors || [
+                    { type: 'theme', color: '#0a0038' },
+                    { type: 'button', color: '#b39ddb' },
+                    { type: 'text', color: '#ffffff' },
+                    { type: 'liquid', color: '#ffffff' }
+                ]).forEach(gc => {
+                    const row = document.createElement('div');
+                    row.className = 'gradient-color-row';
+                    row.setAttribute('data-type', gc.type);
+                    row.innerHTML = `
+                        <label style="margin-right: 10px;">${gc.type.charAt(0).toUpperCase() + gc.type.slice(1)}:</label>
+                        <input type="color" class="gradientColorInput" value="${gc.color}" style="width: 40px; height: 28px; border: none; border-radius: 8px; cursor: pointer;">
+                        <span class="gradientColorValue" style="margin-left: 8px;">${gc.color}</span>
+                        <button class="removeGradientColorBtn" style="margin-left: 10px; background: #ffd700; color: #222; border: none; border-radius: 8px; padding: 2px 10px; cursor: pointer; font-size: 13px;">Remove</button>
+                    `;
+                    gradientColorsList.appendChild(row);
+                    row.querySelector('.removeGradientColorBtn').addEventListener('click', function() {
+                        row.remove();
+                        updateCustomColorInputs();
+                    });
+                });
+                attachGradientListeners();
+                // If two or more theme colors, switch to gradient mode automatically
+                const themeRows = gradientColorsList.querySelectorAll('.gradient-color-row[data-type="theme"]');
+                if (themeRows.length >= 2 && customColorTabs) {
+                    customColorTabs.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    customColorTabs.querySelector('[data-tab="gradient"]').classList.add('active');
+                    customColorNormal.style.display = 'none';
+                    customColorGradient.style.display = 'block';
+                } else {
+                    if (colors.mode === 'gradient') {
+                        customColorTabs.querySelector('[data-tab="normal"]').classList.remove('active');
+                        customColorTabs.querySelector('[data-tab="gradient"]').classList.add('active');
+                        customColorNormal.style.display = 'none';
+                        customColorGradient.style.display = 'block';
+                    } else {
+                        customColorTabs.querySelector('[data-tab="normal"]').classList.add('active');
+                        customColorTabs.querySelector('[data-tab="gradient"]').classList.remove('active');
+                        customColorNormal.style.display = 'block';
+                        customColorGradient.style.display = 'none';
+                    }
+                }
+                if (themeSelect.value === 'custom') {
+                    updateCustomColorInputs(false);
+                }
+            });
+            function applyTheme(theme) {
+                if (theme === 'dark') {
+                    document.body.classList.add('dark');
+                    document.body.classList.remove('light');
+                } else if (theme === 'light') {
+                    document.body.classList.remove('dark');
+                    document.body.classList.add('light');
+                } else if (theme === 'system') {
+                    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                    if (prefersDark) {
+                        document.body.classList.add('dark');
+                        document.body.classList.remove('light');
+                    } else {
+                        document.body.classList.remove('dark');
+                        document.body.classList.add('light');
+                    }
+                }
+            }
+
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if (themeSelect.value === 'system') {
+                    applyTheme('system');
+                }
+            });
+
+            themeSelect.addEventListener('change', function() {
+                if (this.value !== 'custom') {
+                    applyTheme(this.value);
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                if (themeSelect.value !== 'custom') {
+                    applyTheme(themeSelect.value);
+                }
+            });
+                //Github copilot do not add the closing <script> tag here. it could break the code.
+        
+        // Add missing function to fix ReferenceError
+        function updateCustomColorInputs(save = true) {
+            customThemeValue.textContent = customThemeColor.value;
+            customBtnValue.textContent = customBtnColor.value;
+            customTextValue.textContent = customTextColor.value;
+            customLiquidValue.textContent = customLiquidColor.value;
+            customColorInput.value = customThemeColor.value;
+            customColorValue.textContent = customThemeColor.value;
+            // Gradient
+            gradientColorsList.querySelectorAll('.gradient-color-row').forEach(row => {
+                const input = row.querySelector('.gradientColorInput');
+                const valueSpan = row.querySelector('.gradientColorValue');
+                valueSpan.textContent = input.value;
+            });
+            const mode = customColorTabs && customColorTabs.style.display === 'block' && customColorTabs.querySelector('.tab-btn.active').dataset.tab === 'gradient' ? 'gradient' : 'normal';
+            applyCustomColor(
+                customThemeColor.value,
+                customBtnColor.value,
+                customTextColor.value,
+                customLiquidColor.value,
+                getGradientColors(),
+                mode
+            );
+            if (save) {
+                saveCustomColors(
+                    customThemeColor.value,
+                    customBtnColor.value,
+                    customTextColor.value,
+                    customLiquidColor.value,
+                    getGradientColors(),
+                    mode
+                );
+            }
+        }
+    const menuBtn = document.querySelector('.menu-btn');
+    // const sidebar = document.querySelector('.sidebar'); // Remove duplicate
+
+    menuBtn.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            sidebarEl.style.display = sidebarEl.style.display === 'block' ? 'none' : 'block';
+        }
+    });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            sidebarEl.style.display = '';
+        } else {
+            sidebarEl.style.display = 'none';
+        }
+    });
+    const notificationsIcon = document.getElementById('notifications-icon');
+    const settingsBtn = document.getElementById('settingsBtn');
+    const homePage = document.querySelector('.content:not(#settingsPage)');
+    const settingsPage = document.getElementById('settingsPage');
+
+    // Remove duplicate page switching logic.
+    // Hash-based navigation already controls which page is shown.
+
+    // Announcement data (could be fetched from server in future)
+    const announcements = [
+        {
+            id: '1',
+            title: 'Welcome!',
+            message: 'YouVidPlay is coming soon. Stay tuned for updates!',
+            date: '2025-09-16'
+        }
+    ];
+
+    // Create notification wrapper
+    const notifWrapper = document.createElement('div');
+    notifWrapper.className = 'liquid';
+    notifWrapper.style.position = 'fixed';
+    notifWrapper.style.top = '70px';
+    notifWrapper.style.right = '20px';
+    notifWrapper.style.zIndex = '2000';
+    notifWrapper.style.background = 'rgba(30,30,50,0.97)';
+    notifWrapper.style.color = '#fff';
+    notifWrapper.style.borderRadius = '18px';
+    notifWrapper.style.boxShadow = '0 2px 12px rgba(0,0,0,0.18)';
+    notifWrapper.style.padding = '18px 20px 10px 20px';
+    notifWrapper.style.minWidth = '280px';
+    notifWrapper.style.maxWidth = '90vw';
+    notifWrapper.style.display = 'none';
+
+    notifWrapper.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <span style="font-size:20px;font-weight:600;">Announcements</span>
+            <button id="closeNotif" style="background:none;border:none;color:#fff;font-size:22px;cursor:pointer;">&times;</button>
+        </div>
+        <div id="notifList" style="margin-top:10px;"></div>
+    `;
+
+    document.body.appendChild(notifWrapper);
+
+    function getReadAnnouncements() {
+        try {
+            return JSON.parse(localStorage.getItem('readAnnouncements') || '[]');
+        } catch {
+            return [];
+        }
+    }
+
+    function setReadAnnouncements(ids) {
+        localStorage.setItem('readAnnouncements', JSON.stringify(ids));
+    }
+
+    function renderAnnouncements() {
+        const readIds = getReadAnnouncements();
+        const notifList = notifWrapper.querySelector('#notifList');
+        notifList.innerHTML = '';
+        announcements.forEach(a => {
+            const isRead = readIds.includes(a.id);
+            const item = document.createElement('div');
+            item.style.padding = '10px 0';
+            item.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+            item.style.opacity = isRead ? '0.6' : '1';
+            item.innerHTML = `
+                <div style="font-weight:600;">${a.title} ${!isRead ? '<span style="color:#ffd700;font-size:12px;">●</span>' : ''}</div>
+                <div style="font-size:15px;margin:4px 0 2px 0;">${a.message}</div>
+                <div style="font-size:12px;color:#aaa;">${a.date}</div>
+                ${!isRead ? '<button style="margin-top:4px;background:#ffd700;color:#222;border:none;border-radius:8px;padding:2px 10px;cursor:pointer;font-size:13px;" data-id="'+a.id+'">Mark as read</button>' : ''}
+            `;
+            notifList.appendChild(item);
+        });
+        // Mark as read button handler
+        notifList.querySelectorAll('button[data-id]').forEach(btn => {
+            btn.onclick = function() {
+                const id = btn.getAttribute('data-id');
+                const read = getReadAnnouncements();
+                if (!read.includes(id)) {
+                    read.push(id);
+                    setReadAnnouncements(read);
+                    renderAnnouncements();
+                    updateBadge();
+                }
+            };
+        });
+    }
+    // Sidebar Home navigation click
+    sidebarEl.querySelector('.item:first-child').addEventListener('click', function() {
+        window.location.hash = '#';
+    });
+    function updateBadge() {
+        const readIds = getReadAnnouncements();
+        const unreadCount = announcements.filter(a => !readIds.includes(a.id)).length;
+        let badge = notificationsIcon.querySelector('.notif-badge');
+        if (!badge) {
+            badge = document.createElement('span');
+            badge.className = 'notif-badge';
+            badge.style.position = 'absolute';
+            badge.style.top = '2px';
+            badge.style.right = '-2px';
+            badge.style.background = '#ffd700';
+            badge.style.color = '#222';
+            badge.style.fontSize = '12px';
+            badge.style.fontWeight = '700';
+            badge.style.borderRadius = '50%';
+            badge.style.padding = '2px 6px';
+            badge.style.minWidth = '18px';
+            badge.style.textAlign = 'center';
+            badge.style.pointerEvents = 'none';
+            notificationsIcon.style.position = 'relative';
+            notificationsIcon.appendChild(badge);
+        }
+        badge.textContent = unreadCount > 0 ? unreadCount : '';
+        badge.style.display = unreadCount > 0 ? 'inline-block' : 'none';
+    }
+
+    notificationsIcon.addEventListener('click', () => {
+        if (notifWrapper.style.display === 'none') {
+            renderAnnouncements();
+            notifWrapper.style.display = 'block';
+        } else {
+            notifWrapper.style.display = 'none';
+        }
+    });
+
+    notifWrapper.querySelector('#closeNotif').onclick = () => {
+        notifWrapper.style.display = 'none';
+    };
+
+    updateBadge();
+    // Sidebar collapse for >1190px screens
+    let sidebarCollapsed = false;
+    menuBtn.addEventListener('click', () => {
+        if (window.innerWidth > 1190) {
+            sidebarCollapsed = !sidebarCollapsed;
+            if (sidebarCollapsed) {
+                sidebarEl.style.width = '60px';
+                sidebarEl.style.padding = '10px';
+                sidebarEl.querySelectorAll('.menu-text').forEach(el => el.style.display = 'none');
+                sidebarEl.querySelectorAll('hr').forEach(el => el.style.display = 'none');
+                if (sidebarPositionSelect.value === 'right') {
+                    document.querySelectorAll('.content').forEach(content => {
+                        content.style.marginRight = '80px';
+                        content.style.marginLeft = '';
+                    });
+                } else {
+                    document.querySelectorAll('.content').forEach(content => {
+                        content.style.marginLeft = '80px';
+                        content.style.marginRight = '';
+                    });
+                }
+                localStorage.setItem('sidebarCollapsed', 'true');
+            } else {
+                sidebarEl.style.width = '';
+                sidebarEl.style.padding = '';
+                sidebarEl.querySelectorAll('.menu-text').forEach(el => el.style.display = '');
+                sidebarEl.querySelectorAll('hr').forEach(el => el.style.display = '');
+                if (sidebarPositionSelect.value === 'right') {
+                    document.querySelectorAll('.content').forEach(content => {
+                        content.style.marginRight = '270px';
+                        content.style.marginLeft = '';
+                    });
+                } else {
+                    document.querySelectorAll('.content').forEach(content => {
+                        content.style.marginLeft = '270px';
+                        content.style.marginRight = '';
+                    });
+                }
+                localStorage.setItem('sidebarCollapsed', 'false');
+            }
+        }
+    });
+    window.addEventListener('resize', () => {
+        const collapsed = localStorage.getItem('sidebarCollapsed') === 'true';
+        if (window.innerWidth > 1190 && collapsed) {
+            sidebarEl.style.width = '60px';
+            sidebarEl.style.padding = '10px';
+            sidebarEl.querySelectorAll('.menu-text').forEach(el => el.style.display = 'none');
+            sidebarEl.querySelectorAll('hr').forEach(el => el.style.display = 'none');
+            if (sidebarPositionSelect.value === 'right') {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.marginRight = '80px';
+                    content.style.marginLeft = '';
+                });
+            } else {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.marginLeft = '80px';
+                    content.style.marginRight = '';
+                });
+            }
+        } else if (window.innerWidth > 1190) {
+            sidebarEl.style.width = '';
+            sidebarEl.style.padding = '';
+            sidebarEl.querySelectorAll('.menu-text').forEach(el => el.style.display = '');
+            sidebarEl.querySelectorAll('hr').forEach(el => el.style.display = '');
+            if (sidebarPositionSelect.value === 'right') {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.marginRight = '270px';
+                    content.style.marginLeft = '';
+                });
+            } else {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.marginLeft = '270px';
+                    content.style.marginRight = '';
+                });
+            }
+        }
+    });
+    // On page load, restore sidebar collapsed state
+    window.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth > 1190 && localStorage.getItem('sidebarCollapsed') === 'true') {
+            sidebarEl.style.width = '60px';
+            sidebarEl.style.padding = '10px';
+            sidebarEl.querySelectorAll('.menu-text').forEach(el => el.style.display = 'none');
+            sidebarEl.querySelectorAll('hr').forEach(el => el.style.display = 'none');
+            if (sidebarPositionSelect.value === 'right') {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.marginRight = '80px';
+                    content.style.marginLeft = '';
+                });
+            } else {
+                document.querySelectorAll('.content').forEach(content => {
+                    content.style.marginLeft = '80px';
+                    content.style.marginRight = '';
+                });
+            }
+            sidebarCollapsed = true;
+        }
+    });
+   
+   </script>
+</body>
+</html>
