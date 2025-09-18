@@ -668,7 +668,24 @@
             <option value="system" selected style="color: #ffffff; background: #0a0038;">System Default</option>
             <option value="custom" style="color: #ffffff; background: #0a0038;">Custom</option>
             </select>
-        </div>
+        </div>  
+        <label for="sidebarPositionSelect" style="font-weight: 600; font-size: 16px; margin-right: 10px;">Sidebar Position:</label>
+                <select id="sidebarPositionSelect" class="liquid" style="
+                    color: #b3b3b3;
+                    background: rgba(30,30,50,0.18);
+                    border: none;
+                    border-radius: 12px;
+                    padding: 8px 18px;
+                    font-size: 16px;
+                    margin-top: 6px;
+                    font-family: 'Poppins', Arial, sans-serif;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                    outline: none;
+                    transition: background 0.2s;
+                ">
+                    <option value="left">Left</option>
+                    <option value="right">Right</option>
+                </select>
         <div id="customColorDiv" style="display: none;">
             <div class="tabs liquid" id="customColorTabs" style="margin-top: 18px;">
             <button class="tab-btn active" data-tab="normal">Normal</button>
@@ -773,23 +790,7 @@
                     }
                 });
             </script>
-                <label for="sidebarPositionSelect" style="font-weight: 600; font-size: 16px; margin-right: 10px;">Sidebar Position:</label>
-                <select id="sidebarPositionSelect" class="liquid" style="
-                    color: #b3b3b3;
-                    background: rgba(30,30,50,0.18);
-                    border: none;
-                    border-radius: 12px;
-                    padding: 8px 18px;
-                    font-size: 16px;
-                    margin-top: 6px;
-                    font-family: 'Poppins', Arial, sans-serif;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-                    outline: none;
-                    transition: background 0.2s;
-                ">
-                    <option value="left">Left</option>
-                    <option value="right">Right</option>
-                </select>
+              
             </div>
             <script>
                 // Sidebar position logic
@@ -1597,5 +1598,6 @@
 </body>
 
 </html>
+
 
 
