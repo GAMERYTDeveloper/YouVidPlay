@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://video.gameryt.com/sitemap.xml
+Sitemap: https://video.munetios.com/sitemap.xml
+
