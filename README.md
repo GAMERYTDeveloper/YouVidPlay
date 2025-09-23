@@ -24,7 +24,7 @@ YouVidPlay™ is a **next-generation video platform** built for creators and vie
 
 ## 📅 Release Date
 - **Coming in 2026**  
-- Official announcements will be posted here and on **https://video.gameryt.com/**  
+- Official announcements will be posted here and on **https://video.munetios.com/**  
 
 ---
 
@@ -39,7 +39,7 @@ No reproduction, redistribution, or modification of the code, assets, or brandin
 ---
 
 ## 🔗 Links
-- 🌐 Website: [https://video.gameryt.com/](https://video.gameryt.com/)  
+- 🌐 Website: [https://video.munetios.com/](https://video.munetios.com/)  
 - 📰 Updates: (Coming Soon)  
 
 ---
