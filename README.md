@@ -30,7 +30,7 @@ YouVidPlay™ is a **next-generation video platform** built for creators and vie
 
 ## 🛡 Trademark & Ownership
 - © 2025–2026 **Munetios**  
-- **YouVidPlay™** and the YouVidPlay logo are **registered trademarks** of Munetios.  
+- **YouVidPlay™** and the YouVidPlay logo are **trademarks** of Munetios.  
 - All rights reserved.  
 
 ⚠️ **Note:** This repository is only for hosting the official YouVidPlay Coming Soon page via GitHub Pages.  
