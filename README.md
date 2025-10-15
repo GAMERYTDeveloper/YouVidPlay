@@ -1,8 +1,8 @@
 # YouVidPlay
-YouVidPlay™ — A new video platform launching in 2026 by GAMERYTDeveloper. Features ad toggle (default off), customizable themes, AI-powered video tools, and a user-first experience.
+YouVidPlay™ — A new video platform launching in 2026 by Munetios. Features ad toggle (default off), customizable themes, AI-powered video tools, and a user-first experience.
 # YouVidPlay™ 🎬
 
-**YouVidPlay™** is an upcoming video platform developed and owned by **GAMERYTDeveloper**.  
+**YouVidPlay™** is an upcoming video platform developed and owned by **Munetios**.  
 Launching worldwide in **2026**, YouVidPlay is designed to give users **more control, more customization, and no forced ads**.
 
 ![YouVidPlay Logo](image.png)
@@ -17,7 +17,7 @@ YouVidPlay™ is a **next-generation video platform** built for creators and vie
 - 📱 **Cross-Platform Sync** – Access videos across all devices seamlessly.  
 - 📥 **Offline Viewing** – Watch videos anytime, anywhere (free).  
 - 🔔 **Smart Notifications** – Stay updated on your favorite channels.  
-- 💡 **AI Integration** – Powered by *YouGAMERYTAssist* for video summaries, creation help, and more.  
+- 💡 **AI Integration** – Powered by *Munetios AI* for video summaries, creation help, and more.  
 - 💰 **Fair Monetization** – Memberships and subscriptions without forcing ads.  
 
 ---
@@ -29,8 +29,8 @@ YouVidPlay™ is a **next-generation video platform** built for creators and vie
 ---
 
 ## 🛡 Trademark & Ownership
-- © 2025–2026 **GAMERYTDeveloper**  
-- **YouVidPlay™** and the YouVidPlay logo are **registered trademarks** of GAMERYTDeveloper.  
+- © 2025–2026 **Munetios**  
+- **YouVidPlay™** and the YouVidPlay logo are **registered trademarks** of Munetios.  
 - All rights reserved.  
 
 ⚠️ **Note:** This repository is only for hosting the official YouVidPlay Coming Soon page via GitHub Pages.  
